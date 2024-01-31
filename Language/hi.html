@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    /* Add your custom styles for cards and slider container */
+    .swiper-container {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .swiper-slide {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .agent-image img {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .agent-info-hover {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="single-agent">
+        <div class="agent-image">
+          <img src="images/service/buy.png" alt="" style="height:250px;width:300px;">
+        </div>
+        <div class="agent-info-hover">
+          <div class="agent-name">
+            <h5><a href="agent-details.html">Shah M Nawaz</a></h5>
+            <p>Real Estate Agent</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Add more cards as needed -->
+      <div class="single-agent">
+        <!-- Card content for agent 2 -->
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+      <div class="single-agent">
+        <!-- Card content for agent 3 -->
+      </div>
+      
+      <!-- Add more cards as needed -->
+      <div class="single-agent">
+        <!-- Card content for agent 4 -->
+      </div>
+    </div>
+
+    <!-- Add more slides as needed -->
+
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Navigation -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  // Initialize Swiper
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+
+</body>
+</html>
