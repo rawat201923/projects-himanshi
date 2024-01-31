@@ -762,3 +762,8 @@ textarea::placeholder-shown{
   .mini-side-bar{
     display: none;
   }}
+
+
+.item_content{
+    padding-left:30px;
+  }
