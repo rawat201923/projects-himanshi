@@ -362,7 +362,6 @@ textarea::placeholder-shown{
 }
 .outer_project{
 
-  display: inline-block;
   position: relative;
   height: 1500px;
   top: -10px;
