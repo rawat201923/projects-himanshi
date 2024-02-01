@@ -345,7 +345,7 @@ margin:2px 2px 2px 2px;
 margin-left:10px;
 } */
 .msg_div textarea{
-    width: 738px !important;
+    width: 738px ;
   height: 70px;
 }
 
@@ -586,8 +586,8 @@ h2{
   height: 231px;
   opacity: 0.3;  
 }
-input, textarea{
-  width:200px;
+input, .msg_div  textarea{
+  width:300px;
   
   
   } 
@@ -613,11 +613,11 @@ input, textarea{
 .outer_project{
   height:1200px;
 }
-input, textarea{
-  width:200px;
+input, .msg_div  textarea{
+  width:380px;
   
   
-  } 
+  }  
 
 
 }
