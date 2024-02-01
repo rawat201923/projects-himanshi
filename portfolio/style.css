@@ -345,9 +345,8 @@ input:hover,textarea:hover{
   margin-left:10px;
 }
 .msg_div textarea{
-  width: 820px !important;
-  height:100px;
-
+      width: 738px !important;
+    height: 70px;
 }
 
 textarea::placeholder-shown{
