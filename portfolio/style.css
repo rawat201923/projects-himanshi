@@ -341,9 +341,9 @@ input:hover,textarea:hover{
 }
 
 
-.msg_div{
+/* .msg_div{
   margin-left:10px;
-}
+} */
 .msg_div textarea{
       width: 738px !important;
     height: 70px;
@@ -610,10 +610,6 @@ textarea::placeholder-shown{
   }
   .outer_project{
     height:1200px;
-  }
-
-  input , textarea{
-  width:200px;
   }
 
 }
