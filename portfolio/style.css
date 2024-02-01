@@ -612,6 +612,10 @@ textarea::placeholder-shown{
     height:1200px;
   }
 
+  input , textarea{
+  width:200px;
+  }
+
 }
 
 
