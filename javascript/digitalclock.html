@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+      3. Javascript : Digital clock
+        </title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        
+        <div class="container calculator">
+            <h1>Digital clock</h1>
+            <div class="center">
+                <div id="banner"><span>Your local time</span></div>
+                <div id="clock"></div>
+            </div>
+           
+          
+        </div>
+        <script>
+        const clock = document.getElementById('clock');
+
+            setInterval(function() {
+                let date = new Date();
+                clock.innerHTML = date.toLocaleTimeString();
+            }, 1000);
+            </script>
+        
+    </body>
+</html>

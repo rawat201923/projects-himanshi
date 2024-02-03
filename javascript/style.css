@@ -79,3 +79,7 @@ button{
     color:red;
     font-size: x-large;
 }
+
+#clock{
+    font-size: 40px;
+}
