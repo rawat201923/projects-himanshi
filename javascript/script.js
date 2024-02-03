@@ -44,6 +44,7 @@ form.addEventListener('submit', function(e){
     const height = parseInt(document.querySelector('#height').value);
     const weight = parseInt(document.querySelector('#weight').value);
     const results = document.querySelector('#results');
+    const alert = document.querySelector('#alert');
 
     // condition for all inputs not empty, value not less than 0 & only accept a number.
     if (height === '' || height < 0 || isNaN(height)) {
@@ -52,8 +53,17 @@ form.addEventListener('submit', function(e){
         results.innerHTML = `PLEASE GIVE A VALID VALUE ${weight}`;
     } else {
         const bmi = (height / ((height * height) / 10000)).toFixed(2);
+
+        if (bmi > 18.6 && bmi <= 24.9){
+            alert.innerHTML = `You have normal weight`;
+        } else if (bmi <= 18.6) {
+            alert.innerHTML = `You are underweight`;
+        } else {
+            alert.innerHTML = `You are overweight`;
+        }
+
         // show results;
-        results.innerHTML = `<span>${bmi}</span>`;
-        console.log(bmi);
+        results.innerHTML = `<span>Result: ${bmi}</span>`;
     }
 });
+
