@@ -31,3 +31,23 @@ div{
     height:100px ;
     width:100px;
 }
+
+#gray{
+    background-color: gray;
+}
+
+#pink{
+    background-color: pink;
+}
+
+#green{
+    background-color: green;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#red{
+    background-color: red;
+}
