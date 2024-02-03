@@ -777,10 +777,17 @@ input, textarea{
   padding-left:30px;
 }
 
+
+
 @media (max-width:360px) {
     input, .msg_div  textarea{
-      width:100px !important;
+      width:200px !important;
       
       
       }  
+    .project_img, .back_div{
+      width:280px;
+    }
   }
+
+
