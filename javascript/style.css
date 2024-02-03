@@ -18,10 +18,10 @@ div{
     
 }
 .container{
-    paddding:20px 20px 20px 20px;
+    padding:20px 20px 20px 20px;
 }
 
-.color_changer{
+.color_changer, .calculator{
     text-align: center;
 }
 
@@ -50,4 +50,32 @@ div{
 
 #red{
     background-color: red;
+}
+
+
+form{
+    background-color: aquamarine;
+    padding: 10px 10px 10px 10px;
+    background-color: aquamarine;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    
+}
+
+form div{
+    padding:15px 0px 15px 0px;
+    
+}
+input{
+    width:200px;
+}
+button{
+    background:green;
+    padding:10px 30px 10px 30px;
+    color:white;
+    border-radius: 20px;
+}
+#results{
+    color:red;
+    font-size: x-large;
 }
