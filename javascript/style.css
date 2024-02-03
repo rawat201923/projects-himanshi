@@ -2,5 +2,32 @@
 body{
     padding:0;
     margin:0;
+    
 }
 
+.project{
+    background-color: antiquewhite;
+}
+
+div{
+    padding:5px 5px 5px 5px;
+}
+
+.project{
+    padding:50px 50px 50px 50px;
+    
+}
+.container{
+    paddding:20px 20px 20px 20px;
+}
+
+.color_changer{
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    border: 2px solid black;
+    height:100px ;
+    width:100px;
+}
