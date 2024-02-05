@@ -120,7 +120,7 @@ button{
 
 .weather-icon{
     width:170px;
-    margin-top:30px;
+    margin-top:10px;
 }
 
 weather h2{
@@ -137,7 +137,7 @@ weather h3{
     align-items: center;
     justify-content: space-between;
     padding:0 20px;
-    margin-top:50px;
+    margin-top:10px;
 }
 
 .col{
