@@ -16,10 +16,10 @@
                 <input type="text" id="guessfield" class="guessfield"><br>
                 <button type="submit" id="subt" class="guessSubmit">Submit Guess</button>
             </form>
-                <div class="result_no">
+                <div class="resultparas">
                     <p>Previous Guesses: <span class="guesses"></span></p>
                     <p>Guess Remaining: <span class="lastresult">10</span></p>
-                    <p id="loworhigh"></p>
+                    <p class="loworhigh"></p>
 
                 </div>
         
@@ -33,15 +33,15 @@
 const randnumber= parseInt(Math.random()*100+1);
 const submit= document.querySelector('#subt');
 const userinput = document.querySelector('#guessfield')
-const guessslot= document.querySelector('#guesses');
-const remaining = document.querySelector('#lastresult');
-const loworhigh = document.querySelector('#loworhigh');
-const startover = document.querySelector('#result_no');
+const guessslot= document.querySelector('.guesses');
+const remaining = document.querySelector('.lastresult');
+const loworhigh = document.querySelector('.loworhigh');
+const startover = document.querySelector('.resultparas');
 
 const p = document.createElement('p');
 
-let preGuess= [];
-let numGuess = 1
+let prevGuess= [];
+let numGuess = 1;
 let playGame = true;
 
 if(playGame){
@@ -57,17 +57,15 @@ function validateGuess(guess){
     if(isNaN(guess)){
         alert('please enter a valid number');
     }else if(guess<1){
-        alert('please enter a valid number');
+        alert('please enter a numver more than 1');
     } else if(guess>100){
         alert('please enter a number less than 100');
     }else{
-        preGuess.push(guess)
+        prevGuess.push(guess)
         if(numGuess===11){
             displayGuess(guess)
             displayMessage(`game over. random was ${randnumber}`)
             endGame()
-
-
 
         }
         else{
