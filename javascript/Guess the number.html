@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+      4. Javascript : Guess the number.
+        </title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        
+        <div class="container calculator">
+            <h1>Number guessing game</h1>
+            <p>Try and guess a random number</p>
+            <p></p>
+            <form class="form">
+                <label for "guessfield" id="guess">Guess a number</label>
+                <input type="text" id="guessfield" class="guessfield">
+                <button type="submit" id="subt" class="guessSubmit">Submit Guess</button>
+            </form>
+                <div class="result_no">
+                    <p>Previous Guesses: <span class="guesses"></span></p>
+                    <p>Guess Remaining: <span class="lastresult">10</span></p>
+                    <p class="loworhigh"></p>
+
+                </div>
+        
+           
+           
+          
+        </div>
+      
+    <script>
+        
+const randnumber= parseInt(Math.random()*100+1);
+const sumbit= document.querySelector('#subt');
+const userinput = document.querySelector('#guessfield')
+const guessslot= document.querySelector('#guesses');
+const remaining = document.querySelector('#lastresult')
+
+    </script>
+    </body>
+</html>
