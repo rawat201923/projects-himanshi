@@ -19,6 +19,7 @@ div{
 }
 .container{
     padding:20px 20px 20px 20px;
+    align-items: center;
 }
 
 .color_changer, .calculator{
