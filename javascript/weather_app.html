@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+      5. Javascript : Weather App
+        </title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        
+        <div class="conatiner card">
+           <div class="search">
+            <input type="text" placeholder="enter city name" spellcheck="false">
+            <button>search</button>
+           </div>
+           <div class="weather">
+            <img src="images/rain.png" class="weather-icon" alt="rain">
+            <h2 class="temp">22°c</h2>
+            <h3 class="city">New york</h3>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="humid">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="wind">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind speed</p>
+                    </div>
+                </div>
+            </div>
+           </div>
+           
+          
+        </div>
+        <script>
+            const apikey= "2a4bcd9e2d208fff6af8939c7d7c3fbd";
+            const apiUrl= 
+            "https://api.openweathermap.org/data/2.5/weather?units=metric&q=faridabad";
+
+            async function checkWeather(){
+                const response = await fetch(apiUrl + `&appid=${apikey}`);
+                var data= await response.json();
+                console.log(data);
+
+                document.querySelector(".city").innerHTML=data.name;
+                document.querySelector(".temp").innerHTML=data.main.temp + "";
+                document.querySelector(".humid").innerHTML=data.main.humidity + "%";
+                document.querySelector(".wind").innerHTML=data.speed;
+            }
+
+            checkWeather();
+            </script>
+        
+    </body>
+</html>
