@@ -95,7 +95,7 @@ button{
     color: #fff;
 
     border-radius: 20px;
-    padding:10px 20px 0px 20px;
+    padding:5px 20px 5px 20px;
     text-align: center;
 }
 
@@ -103,7 +103,7 @@ button{
     width:100%;
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .search input{
@@ -160,9 +160,12 @@ weather h3{
     width: 43px;
     height:34px;
 }
-
+ .weather{
+    display: none;
+ }
 .weatherapp{
     padding:5px 300px 5px 300px;
+    text-align: center;
 }
 
 @media (max-width:412px) and (max-width:700px){
@@ -171,9 +174,36 @@ weather h3{
     }
 
 }
+@media (max-width:600px) and (max-width:900px){
+    .weatherapp{
+        padding:0px;
+
+    }
+
+}
+
 
 .search button{
-    background: rgb(96 120 97 / 0%);
+    background: #ebfffc;
     border-radius: 70%;
     padding:10px;
+    border:none
+}
+
+.error{
+    text-align: center;
+    margin-left:10px;
+    font-size:14px;
+    display:none;
+
+
+}
+
+@media (max-width:412px) and (max-width:700px){
+    .details{
+        display:inline-block;
+        
+    }
+  
+
 }

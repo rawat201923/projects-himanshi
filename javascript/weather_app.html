@@ -8,11 +8,15 @@
     <body>
         
         <div class="container weatherapp">
+            <h1>Weather Checker </h1>
             <div class="card">
-                <h1>Weather Checker </h1>
+                
            <div class="search">
             <input type="text" placeholder="Enter city name" spellcheck="false">
             <button> <img src="images/search.png" alt="search"></button>
+           </div>
+           <div class="error">
+            <p>Invalid city name</p>
            </div>
            <div class="weather">
             <img src="images/rain.png" class="weather-icon" alt="rain">
@@ -49,8 +53,15 @@
 
             async function checkWeather(city){
                 const response = await fetch(apiUrl + city + `&appid=${apikey}`);
+                
+                if(response.status == 404){
+                    document.querySelector(".error").style.display="block";
+                    document.querySelector(".weather").style.display="none";    
+                }else{
+               
                 var data= await response.json();
-                console.log(data);
+                }
+            
 
                 document.querySelector(".city").innerHTML=data.name;
                 document.querySelector(".temp").innerHTML=Math.round(data.main.temp) + "°c";
@@ -73,6 +84,8 @@
                 else if(data.weather[0].main=="Drizzle"){
                     weathericon.src="images/drizzle.png";
                 }
+                document.querySelector(".weather").style.display="block";
+                document.querySelector(".error").style.display="none";
             }
 
             searchbtn.addEventListener("click",()=>{
