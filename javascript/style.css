@@ -276,7 +276,7 @@ ul li::before{
     height:28px;
     width:28px;
     border-radius: 50%;
-    background-image: url(images/rain.png);
+    background-image: url(images/uncheck.png);
     background-position: cover;
     background-position: center;
     top:12px;
@@ -289,7 +289,7 @@ ul li.checked{
     text-decoration:line-through;
 }
 ul li.checked::before{
-    background-image: url(images/cloudy);
+    background-image: url(images/check.png);
 }
 
 ul li span{
