@@ -2,8 +2,17 @@
 body{
     padding:0;
     margin:0;
-    background-color: #9ec7c1;
+    background-image: url(images/bg_todo.gif);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;    
     
+}
+
+.body{
+    background-color: #fff;
+    margin: 100px 20px 100px 20px;
+    border-radius: 20px;
 }
 
 .project{
@@ -296,4 +305,9 @@ ul li span{
 
 ul li span:hover{
     background-color: #b9c1c0;
+}
+
+.todo{
+   
+
 }
