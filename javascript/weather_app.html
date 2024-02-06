@@ -11,7 +11,7 @@
             <div class="card">
                 <h1>Weather Checker </h1>
            <div class="search">
-            <input type="text" placeholder="enter city name" spellcheck="false">
+            <input type="text" placeholder="Enter city name" spellcheck="false">
             <button> <img src="images/search.png" alt="search"></button>
            </div>
            <div class="weather">
@@ -45,6 +45,7 @@
 
             const searchbox= document.querySelector(".search input");
             const searchbtn= document.querySelector(".search button");
+            const weathericon= document.querySelector(".weather-icon");
 
             async function checkWeather(city){
                 const response = await fetch(apiUrl + city + `&appid=${apikey}`);
@@ -55,6 +56,23 @@
                 document.querySelector(".temp").innerHTML=Math.round(data.main.temp) + "°c";
                 document.querySelector(".humidity").innerHTML=data.main.humidity + "%";
                 document.querySelector(".wind").innerHTML=data.wind.speed + "Km/h";
+           
+
+                if(data.weather[0].main=="Clouds"){
+                    weathericon.src="images/cloudy.png";
+                }
+                else if(data.weather[0].main=="Clear"){
+                    weathericon.src="images/clear.png";
+                }
+                else if(data.weather[0].main=="Mist"){
+                    weathericon.src="images/mist.png";
+                }
+                else if(data.weather[0].main=="Rain"){
+                    weathericon.src="images/rain.png";
+                }
+                else if(data.weather[0].main=="Drizzle"){
+                    weathericon.src="images/drizzle.png";
+                }
             }
 
             searchbtn.addEventListener("click",()=>{
