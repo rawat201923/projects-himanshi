@@ -70,7 +70,7 @@ input{
     width:200px;
 }
 button{
-    background:green;
+    background:rgb(96 120 97 / 36%);
     padding:10px 30px 10px 30px;
     color:white;
     border-radius: 20px;
@@ -90,12 +90,12 @@ button{
 
 .card{
     width: 90%;
-    max-width: 470px;
+    
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
-    margin:20px;
+
     border-radius: 20px;
-    padding:40px 35px;
+    padding:10px 20px 0px 20px;
     text-align: center;
 }
 
@@ -108,6 +108,7 @@ button{
 
 .search input{
     border:0;
+    WIDTH:60%;
     outline:0;
     background: #ebfffc;
     color:#555;
@@ -120,7 +121,6 @@ button{
 
 .weather-icon{
     width:170px;
-    margin-top:10px;
 }
 
 weather h2{
@@ -130,7 +130,7 @@ weather h2{
 weather h3{
     font-size: 45px;
     font-weight: 400;
-    margin-top:-10px;
+    margin-top:-20px;
 }
 .details{
     display:flex;
@@ -147,12 +147,27 @@ weather h3{
 
 }
 .col img{
-    width:40px;
+    width:80px;
     margin-right:10px;
 }
 
 .humidity , .wind{
     font-size: 28px;
-    margin-top:10px;
+   
 }
 
+.search img{
+    width: 43px;
+    height:34px;
+}
+
+.weatherapp{
+    padding:5px 300px 5px 300px;
+}
+
+@media (max-width:412px) and (max-width:700px){
+    .weatherapp{
+        padding:0px;
+    }
+
+}
