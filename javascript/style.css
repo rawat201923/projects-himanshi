@@ -220,6 +220,26 @@ weather h3{
         display:inline-block;
         
     }
+    .todo-app{
+        max-width:80% !important;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .todo-app h2{
+        flex-direction: column;
+        font-size: xxx-large !important;
+    }
+    ul li{
+        width:50%;
+
+    }
+    input{
+        font-size: 24px;
+        padding:30px;
+        text-align: center;
+    }
+  
   
 
 }
@@ -307,7 +327,3 @@ ul li span:hover{
     background-color: #b9c1c0;
 }
 
-.todo{
-   
-
-}
