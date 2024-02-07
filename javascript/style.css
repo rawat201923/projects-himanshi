@@ -230,14 +230,12 @@ weather h3{
         flex-direction: column;
         font-size: xxx-large !important;
     }
-    ul li{
-        width:50%;
 
-    }
     input{
         font-size: 24px;
         padding:30px;
         text-align: center;
+        word-wrap: break-word;
     }
   
   
@@ -285,10 +283,11 @@ weather h3{
 ul li{
     list-style: none;
     font-size: 17px;
-    padding:12px 8px 12px 50px;
+    padding:12px 40px 12px 50px;
     user-select: none;
     cursor:pointer;
     position: relative;
+    word-wrap: break-word;
 }
 ul li::before{
     content: '';
@@ -301,6 +300,7 @@ ul li::before{
     background-position: center;
     top:12px;
     left:8px;
+    word-wrap: break-word;
 
 }
 
