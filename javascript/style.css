@@ -572,3 +572,47 @@ ul li span:hover{
     color:#333;
 
 }
+
+.qr{
+    width:400px;
+    padding:25px 35px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.qr p{
+    font-size:15px;
+    font-weight:600;
+    margin-bottom: 8px;
+
+}
+
+.qr input{
+    width:100%;
+    height:50px;
+    border:1px solid #494eea;
+    outline:0;
+    padding:10px;
+    margin:10px 0 10px;
+    border-radius: 10px;
+}
+
+.qr button{
+    width:100%;
+    height:50px;
+    background:#494eea;
+    color:#fff;
+    border:0;
+    outline:0;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    cursor:pointer;
+    margin:20px 0;
+    font-weight:500;
+
+}
+
