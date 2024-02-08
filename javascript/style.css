@@ -217,7 +217,7 @@ weather h3{
 }
 
 @media (max-width:412px) and (max-width:700px){
-    .details,.display{
+    .details{
         display:inline-block;
         
     }
@@ -426,10 +426,16 @@ ul li span:hover{
     border-radius: 10px;
 }
 
+.password_app h1
+{
+    text-align: left;
+    font-size: 40px;
+}
 .password_app h1 span{
-    color:#019f;
-    border-radius: 4px solid #019f55;
+    color:#019f55;
+    border-bottom: 4px solid #019f55;
     padding-bottom: 7px;
+    
 }
 .display input{
     font-size:24px;   
@@ -458,3 +464,14 @@ ul li span:hover{
 
 }
 
+@media (max-width:412px) and (max-width:700px){
+    .display{
+        flex-direction: column;
+        width:80%;
+        
+    }
+    .password_app button{
+        flex-direction: column;
+    }
+
+}
