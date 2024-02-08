@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>
+      5. Javascript : Quiz app
+        </title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="quiz-app todo-app">
+                <h1>Sample Quiz</h1>
+                <div class="quiz">
+                    <h2 id="question">Questions goes here</h2>
+                <div id="answer-buttons">
+                    <!-- <button class="bttn">Answer 1</button>
+                    <button class="bttn">Answer 2</button>
+                    <button class="bttn">Answer 3</button>
+                    <button class="bttn">Answer 4</button> -->
+                </div>
+                <button id="next-bttn">Next</button>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+          
+       
+        <script>
+            const questions = [
+                {
+                    question:"Who among the following wrote Sanskrit grammar?",
+                    answers:[
+                        { text:"Kalidasa" ,correct:false},
+                        { text:"Charak" ,correct:false},
+                        { text:"Panini" ,correct:true},
+                        { text:"Aryabhatt" ,correct:false}
+                    ]
+                },
+                {
+                    question:"Indus river originates in –",
+                    answers:[
+                        { text:"Kinnaur" ,correct:false},
+                        { text:"Ladakh" ,correct:false},
+                        { text:"Nepal" ,correct:false},
+                        { text:"Tibet" ,correct:true}
+                    ]
+                },
+                {
+                    question:"Which of the following is not a nuclear power center",
+                    answers:[
+                        { text:"Narora" ,correct:false},
+                        { text:"Kota" ,correct:false},
+                        { text:"Chamera" ,correct:true},
+                        { text:"Kakrapara" ,correct:false}
+                    ]
+                },
+                {
+                    question:"Film and TV institute of India is located at",
+                    answers:[
+                        { text:"Pune (Maharashtra)" ,correct:true},
+                        { text:"Pimpri (Maharashtra)" ,correct:false},
+                        { text:"Perambur (Tamilnadu)" ,correct:false},
+                        { text:"Rajkot (Gujarat)" ,correct:false}
+                    ]
+                },                {
+                    question:"NASA’s most famous space telescope goes by the name?",
+                    answers:[
+                        { text:"Muble Satellite Telescope" ,correct:false},
+                        { text:"Hubble Space Telescope" ,correct:true},
+                        { text:"Humble Space Telescope" ,correct:false},
+                        { text:"Galaxy Satellite Telescope" ,correct:false}
+                    ]
+                }
+            ];
+
+            const questionElement = document.getElementById("question");
+            const answerButton = document.getElementById("answer-buttons");
+            const nextButton = document.getElementById("next-bttn");
+
+            let currentQuestionIndex=0;
+            let score=0;
+
+            function startQuiz(){
+                currentQuestionIndex = 0;
+                score = 0;
+                nextButton.innerHTML="Next";
+                showQuestion();
+            }   
+                function showQuestion(){
+                    resetState();
+                    let currentQuestion= questions[currentQuestionIndex];
+                    let questionNo = currentQuestionIndex + 1;
+                    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+                    currentQuestion.answers.forEach(answer => {
+                        const button = document.createElement("button");
+                        button.innerHTML=answer.text;
+                        button.classList.add("bttn");
+                        answerButton.appendChild(button);
+                        if(answer.correct){
+                            button.dataset.correct=answer.correct;
+                        }
+                        button.addEventListener("click", selectAnswer);
+                        
+                    });
+            
+                }
+          
+
+            function resetState(){
+                nextButton.style.diplay="none";
+                while(answerButton.firstChild){
+                    answerButton.removeChild(answerButton.firstChild);
+                }
+            }
+
+                function selectAnswer(e){
+                        const selectedBtn = e.target;
+                        const isCorrect = selectedBtn.dataset.correct === "true";
+                        if(isCorrect){
+                            selectedBtn.classList.add("correct");
+                            score++;
+                        } else {
+                            selectedBtn.classList.add("incorrect");
+                        }
+                        Array.from(answerButton.children).forEach(button=>{
+                            if(button.dataset.correct === "true"){
+                                button.classList.add("correct");
+                            }
+                            button.disabled = true;
+                        });
+                        nextButton.style.display="block";
+                }
+
+                function resetState(){
+                nextButton.style.display="none";
+                while(answerButton.firstChild){
+                    answerButton.removeChild(answerButton.firstChild);
+                }
+                }
+
+            function handleButton(){
+                currentQuestionIndex++;
+                if(currentQuestionIndex<questions.length){
+                    showQuestion();
+                }else{
+                    showScore();
+                }
+            }
+            nextButton.addEventListener("click",()=>{
+                if(currentQuestionIndex< questions.length){
+                    handleButton();
+                }
+            })
+            startQuiz();
+          
+
+        
+
+            
+        
+       
+            </script>
+        
+    </body>
+</html>
