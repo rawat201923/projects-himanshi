@@ -19,10 +19,6 @@ body{
     background-color: antiquewhite;
 }
 
-div{
-    padding:5px 5px 5px 5px;
-}
-
 .project{
     padding:50px 50px 50px 50px;
     
@@ -477,6 +473,8 @@ ul li span:hover{
         width:70% !important;
     }
 
+    
+
 }
 
 
@@ -584,6 +582,13 @@ ul li span:hover{
     border-radius: 10px;
 }
 
+@media (max-width:430px) and (max-width:700px){
+    .qr{
+        width:260px;
+        
+    }
+}
+
 .qr p{
     font-size:15px;
     font-weight:600;
@@ -618,7 +623,7 @@ ul li span:hover{
 
 #imgBox{
     width:200px;
-    border-radius: 5px;
+    border-radius: 50px;
     max-height:0;
     overflow:hidden;
     transition: max-height 1s;
@@ -626,11 +631,11 @@ ul li span:hover{
 }
 
 #imgBox img{
-    width:100%;
-    padding:10px;
+   padding:20px 10px;
+    
 }
 
-#imgBox .show-img{
+#imgBox.show-img{
     max-height: 300px;
     margin:10px auto;
     border:1px solid #d1d1d1;
