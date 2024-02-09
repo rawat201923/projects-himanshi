@@ -1,28 +1,51 @@
 <html>
-    <head>
-        <title>
-      10. Javascript : QR Generator
-        </title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-    <body>
-        
-        <div class="container">
-            <div class="qr">
-                <p>Enter Your Text</p>
-                <input type="text" placeholder="Enter Text or Url">
-                <button>Generate QR Code</button>
+
+<head>
+    <title>
+        10. Javascript : QR Generator
+    </title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="qr">
+            <p>Enter Your Text or Url</p>
+            <input type="text" id="qrText" placeholder="Enter Text or Url">
+            
+            <div id="imgBox">
+                <img src="" id="qrImg">
             </div>
             
-           
-           
-          
+            <button onclick="generateQR()">Generate QR Code</button>
         </div>
-<script>
 
-</script>
+    </div>
+    <script>
+        let imgBox = document.getElementById("imgBox");
+        let qrText = document.getElementById("qrText");
+        let qrImg = document.getElementById("qrImg");
+
+        function generateQR() {
+            if (qrText.value.length > 0) {
+                qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+                 + qrText.value;
+                imgBox.classList.add("show-img");
+            } else {
+                qrText.classList.add("error");
+                setTimeout(() => {
+                    qrText.classList.remove("error");
+                },1000);
+            }
 
 
-        
-    </body>
+        }
+
+    </script>
+
+
+
+</body>
+
 </html>
