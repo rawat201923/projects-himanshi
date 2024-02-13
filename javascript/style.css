@@ -93,12 +93,84 @@ button{
     font-size: x-large;
 }
 
-#clock{
-    font-size: 40px;
-    background:rgb(156, 99, 33);
-    border-radius: 50px;
-    padding:20px 30px 20px 30px;
 
+/*-------------------digital clock----------*/
+.digi-clock{
+    width:100%;
+    min-height: 100vh;
+    background:linear-gradient(45deg, #08001f,#30197d);
+    color: #fff;
+    position:relative;
+}
+.digiclock-cont{
+    width:800px;
+    height:180px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+}
+.clock{
+    height:100%;
+    width:100%;
+    background:rgb(235, 0, 255, 0.11);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+
+}
+.digiclock-cont::before{
+    content:"";
+    width:180px;
+    height:180px;
+    background:#f41b75;
+    border-radius: 5px;
+    position:absolute;
+    left:-5px;
+    top:-50px;
+    z-index:-1;
+
+}
+.digiclock-cont::after{
+    content:"";
+    width:180px;
+    height:180px;
+    background:#410aff;
+    border-radius: 50%;
+    position:absolute;
+    right:-30px;
+    bottom:-50px;
+    z-index:-1;
+
+}
+.clock span{
+    font-size: 80px;
+    width:110px;
+    display:inline-block;
+    text-align: center;
+    position:relative;
+
+}
+.clock span::after{
+    font-size:16px;
+    position:absolute;
+    bottom:-5px;
+    left:50%;
+    transform:translateX(-50%);
+
+}
+
+#hrs::after{
+    content: 'HOURS';
+}
+#min::after{
+    content: 'MINS';
+}
+#sec::after{
+    content: 'SEC';
 }
 
 .card{
@@ -851,3 +923,5 @@ nav .circle{
     background: #f53192;
     color:#fff;
 }
+
+

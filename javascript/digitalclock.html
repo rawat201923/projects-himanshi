@@ -7,23 +7,42 @@
     </head>
     <body>
         
-        <div class="container calculator">
-            <h1>Digital clock</h1>
-            <div class="center">
-                <h2>Your local time</h2>
-                <div id="clock"></div>
+    
+            <div class="digi-clock">
+                <div class="digiclock-cont">
+                    <div  class="clock">
+                        <span id="hrs">00</span>
+                        <span>:</span>
+                        <span id="min">00</span>
+                        <span>:</span>
+                        <span id="sec">00</span>
+                    </div>
+                </div>
             </div>
            
           
-        </div>
+      
         <script>
-        const clock = document.getElementById('clock');
 
-            setInterval(function() {
-                let date = new Date();
-                clock.innerHTML = date.toLocaleTimeString();
-            }, 1000);
-            </script>
+        // const clock = document.getElementById('clock');
+
+        //     setInterval(function() {
+        //         let date = new Date();
+        //         clock.innerHTML = date.toLocaleTimeString();
+        //     }, 1000);
+
+
+        let hrs = document.getElementById("hrs");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+
+        let currentTime = new Date();
+
+        hrs.innerHTML = currentTime.getHours();
+        min.innerHTML = currentTime.getMinutes();
+        sec.innerHTML = currentTime.getSeconds();
+
+        </script>
         
     </body>
 </html>
