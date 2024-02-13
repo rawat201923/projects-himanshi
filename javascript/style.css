@@ -925,3 +925,65 @@ nav .circle{
 }
 
 
+/*-----------age calculator-----------*/
+.age-calculator{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+}
+
+.age-calculator h1{
+    font-size: 60px;
+    text-align: left;
+    
+}
+.age-calculator h1 span{
+    color: #b92b28;
+}
+.age-calculator .input-box{
+    margin:40px 0;
+    padding:35px;
+    background: rgba(225, 255, 255, 0.3);
+    display:flex;
+    align-items: center;
+}
+
+.age-calculator .input-box input{
+    flex:1;
+    margin-right:20px;
+    padding:14px 20px;
+    border:0;
+    outline:0;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    background: #fff;
+}
+
+.age-calculator .input-box button{
+    background:#b92b28;
+    border:0;
+    outline:0;
+    padding:15px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    color:#333;
+    cursor:pointer;
+
+}
+.input-box input::-webkit-calender-picker-indicator{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:auto;
+    position:absolute;
+    background-position: calc(100% - 10%);
+    
+}
+
+#result{
+    font-size: 20px;
+}
+
+#result
