@@ -1044,3 +1044,29 @@ form input.operator{
     color:#33ffd8;
 
 }
+
+/*---------------------hidden password----------*/
+.input-box{
+    background: #fff;
+    width:80%;
+    max-width: 500px;
+    border-radius: 5px;
+    padding:10px 20px;
+    margin:200px auto;
+    display: flex;
+    align-items: center;
+}
+
+.input-box input{
+    width: 50%;
+    padding: 10px 0;
+    border:0;
+    outline:0;
+    font-size: 24px;
+    color:#555;
+}
+
+.input-box i{
+    width:35px;
+    cursor: pointer;
+}
