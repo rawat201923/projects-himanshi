@@ -1037,5 +1037,10 @@ nav .circle{
 }
 
 form input.equal{
-    width:145px;
+    width:100px;
+}
+
+form input.operator{
+    color:#33ffd8;
+
 }
