@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>
+        15. Javascript : Validate form
+    </title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/e71bf1dede.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+
+
+    <div class="container">
+        <form class="form">
+            <i class="fas fa-paper-plane"></i>
+
+            <div class="input-group">
+                <label for="">Full Name</label>
+                <input type="text" placeholder="Enter your name">
+                <span id="name-error">Name is required</span>
+            </div>
+            <div class="input-group">
+                <label for="">Phone No</label>
+                <input type="tel" placeholder="Enter your number">
+                <span id="phone-error">Nmuber is required</span>
+            </div>
+            <div class="input-group">
+                <label for="">Email Id</label>
+                <input type="email" placeholder="Enter your email">
+                <span id="email-error">Email is required</span>
+            </div>
+            <div class="input-group">
+                <label for="">Your message</label>
+                <textarea name="" id=""  rows="5" placeholder="Enter your message"></textarea>
+                <span id="message-error">Message is required</span>
+            </div>
+            <button>Submit</button>
+            <span id="submit-error">Please fix error</span>
+        </form>
+       
+
+        
+    </div>
+    <script>
+        let toastBox = document.getElementById('toastBox');
+        let successMsg='<i class="fa-solid fa-circle-check"></i> Successfully submitted';
+        let errorMsg='<i class="fa-solid fa-circle-xmark"></i> Please fix the error';
+        let invalidMsg='<i class="fa-solid fa-circle-exclamation"></i> Invalid input, check again';
+
+
+        function showtoast(msg){
+            let toast= document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML= msg;
+            toastBox.appendChild(toast);
+
+            if(msg.includes('error')){
+                toast.classList.add('error');
+            }
+            if(msg.includes('Invalid')){
+                toast.classList.add('invalid');
+            }
+
+            setTimeout(()=>{
+                toast.remove
+            })
+
+        }
+
+       
+
+    </script>
+
+
+
+</body>
+
+</html>
