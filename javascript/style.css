@@ -1093,22 +1093,48 @@ form input.operator{
     padding:20px;
     border-radius: 50%;
 }
+.input-group{
+    text-align: left;
+    padding: 20px 50px;
+    border-bottom:1px solid rgb(210 202 202 / 70%);
+ 
+}
+   
 
-{
-    color:#fff;
-    border-radius: 4px;
-    border:1px solid rgba(255, 255, 255, 0.7);
-    padding:10px 40px;
-    outline: 0;
-    cursor:pointer;
-    display:block;
-    margin:30px auto 10px;
+.input-group input, .input-group textarea{
+   border:none
 }
 
 .input-group span{
-    position:absolute;
+
     bottom: 12px;
     right:17px;
     font-size: 14px;
     color:red;
+}
+
+#submit-error
+ { 
+    color: red;
+ }
+
+.input-group i{
+    color:green;
+ }
+
+ @media (max-width:360px) and (max-width:700px){
+    .input-group input, .input-group textarea{
+        margin:0px;
+    }
+
+}
+
+.gallery{
+    width: 90%;
+    display:flex;
+
+}
+.gallery div{
+    width:100%;
+    display: inline;
 }
