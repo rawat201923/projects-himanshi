@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    border: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:#1d4444;
+
+}
+
+.convert-container{
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding:24px 30px;
+    text-align: center;
+}
+
+.convert-container h1{
+    font-size: 28px;
+    text-decoration:underline;
+    color:#333;
+    margin-bottom: 40px;
+}
+.convert-container .input-container{
+    border:2px solid #bbbbbd;
+    border-radius: 4px;
+    margin-block: 20px;
+
+}
+.convert-container .input-container:focus-within{
+    border-color: #0056b3;
+}
+.convert-container .input-container input,
+.convert-container .input-container select{
+    width:150px;
+    outline:none;
+    border:none;
+    font-size: 20px;
+    padding:8px;
+    overflow:hidden;
+
+}
+.convert-container .arrow{
+    transform: rotate(90deg);
+    font-size:44px;
+}
+
+.convert-container .result{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top:20px;
+}
+
+/* responsive code */
+@media screen and (max-width:440px){
+    .convert-container{
+        width:80%;
+        width:0px auto;
+    }
+    .convert-container h1{
+        font-size: 22px;
+    }
+
+    .convert-container .input-container{
+        border:none;
+    }
+    .convert-container  .input-container input,
+    .convert-container .input-container select{
+        border:1px solid #ccc;
+        margin-block:4px;
+        width:100%;
+    }
+}

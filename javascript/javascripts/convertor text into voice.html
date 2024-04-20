@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>16. Javascript : Email subscription</title>
+    <link href="style.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/e71bf1dede.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="text-to-voice-app">
+      <h1>Text to Speech Convertor</h1>
+      <textarea type="text" placeholder="Write anything here...."></textarea>
+      <div class="row">
+        <select></select>
+        <button id="speak">Listen <i class="fa fa-volume-up"></i></button>
+      </div>
+    </div>
+    <script>
+let Speech = new SpeechSynthesisUtterance();
+
+let voices = [];
+let voiceSelect = document.querySelector("select");
+let speech = new SpeechSynthesisUtterance();
+
+window.speechSynthesis.onvoiceschanged = () => {
+    voices = window.speechSynthesis.getVoices();
+    speech.voice = voices[0];
+
+    voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+};
+
+voiceSelect.addEventListener("change", () => {
+    speech.voice = voices[voiceSelect.value];
+});
+
+
+document.querySelector("button").addEventListener("click", () => {
+        Speech.text = document.querySelector("textarea").value;
+        window.speechSynthesis.speak(Speech);
+      });
+    </script>
+  </body>
+</html>

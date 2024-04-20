@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title>
+        15. Javascript : Validate form
+    </title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/e71bf1dede.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+
+
+    <div class="container">
+        <form class="form password_app">
+            <i class="fas fa-paper-plane"></i>
+
+            <div class="input-group">
+                <label for="">Full Name</label>
+                <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()" style="margin-left: 110px;">
+                <span id="name-error"></span>
+            </div>
+            <div class="input-group">
+                <label for="">Phone No</label>
+                <input type="tel" placeholder="Enter your number" id="contact-phone" onkeyup="validatePhone()" style="margin-left: 115px;">
+                <span id="phone-error"></span>
+            </div>
+            <div class="input-group">
+                <label for="">Email Id</label>
+                <input type="email" placeholder="Enter your email" style="margin-left: 125px;" id="contact-email" onkeyup="validateEmail()">
+                <span id="email-error"></span>
+            </div>
+            <div class="input-group">
+                <label for="">Your message</label>
+                <textarea name="" id=""  rows="5" placeholder="Enter your message" style="margin-left: 100px;" id="contact-message" onkeyup="validateMessage()"></textarea>
+                <span id="message-error"></span>
+            </div>
+            <button onclick="return validateform()">Submit</button>
+            <span id="submit-error"></span>
+        </form>
+
+       
+
+        
+    </div>
+    <script>
+
+    var nameError = document.getElementById("name-error");
+    var phoneError = document.getElementById("phone-error");
+    var emailError = document.getElementById("email-error");
+    var messageError = document.getElementById("message-error");
+    var submitError = document.getElementById("submit-error");
+
+    function validateName() {
+        var name = document.getElementById("contact-name").value;
+
+        if (name.length == 0) {
+            nameError.innerHTML = 'Name is required';
+            return false;
+        }
+        if (!name.match(/^[A-Za-z]*\s[A-Za-z]*$/)) {
+            nameError.innerHTML = 'Please enter your full name';
+            return false;
+        }
+        nameError.innerHTML = '<i class="fas fa-check-circle"></i>';
+        return true;
+    }
+
+    function validatePhone(){
+        var phone = document.getElementById("contact-phone").value;
+
+        if (phone.length == 0) {
+            phoneError.innerHTML = 'Phone number is required';
+            return false;
+        }
+        if (phone.length !== 10) {
+            phoneError.innerHTML = 'Phone number should be 10 digits';
+            return false;
+        }
+        if (!phone.match(/^[0-9]{10}$/)) {
+            phoneError.innerHTML = 'Only digits please.';
+            return false;
+        }
+        phoneError.innerHTML = '<i class="fas fa-check-circle"></i>';
+        return true;
+        
+    }
+
+    function validateEmail(){
+    var email = document.getElementById("contact-email").value;
+
+    if (email.length === 0) {
+        emailError.innerHTML = 'Email is required';
+        return false;
+    }
+    if (!email.match(/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/)) {
+        emailError.innerHTML = 'Invalid email format';
+        return false;
+    }
+    emailError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
+}
+
+function validateMessage(){
+    var message = document.getElementById("contact-message").value;
+    var required = 30;
+    var left = required - message.length;
+
+    if (left > 0) {
+        messageError.innerHTML = left + ' more characters required';
+        return false;
+    }
+    messageError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
+}
+
+function validateform(){
+    if (!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
+        submitError.style.display='block';
+        submitError.innerHTML = 'please fix error to submit form';
+        setTimeout(function() { 
+            submitError.style.display='none';
+
+            
+        },3000);
+        return false;
+    }
+
+}
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
