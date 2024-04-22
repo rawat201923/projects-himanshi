@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Currency convertor</title>
+    <link href="style.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/e71bf1dede.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Javascript Events function</h1>
+      <button id="Start">Start</button>
+      <button id="stop">Stop</button>
+      <h3><a href="backgorund color.html">background color</a></h3>
+      <h3><a href="keycodes.html">KEY CODES</a></h3>
+    </div>
+
+    <script>
+      // Define a function that logs the current timestamp along with a provided string
+      const sayDate = function (str) {
+        console.log(str, Date.now());
+      };
+
+      
+      let intervalId;      // Declare a variable to hold the interval ID
+
+      // Add a click event listener to the element with id 'start'
+      document.querySelector("#start").addEventListener("click", () => {
+        // When the 'Start' button is clicked, set up an interval to call sayDate function every 1000 milliseconds
+        intervalId = setInterval(sayDate, 1000, "hi");
+        console.log("Start"); // Log a message indicating that the process has started
+      });
+
+      // Add a click event listener to the element with id 'stop'
+      document.querySelector("#stop").addEventListener("click", () => {
+        // When the 'Stop' button is clicked, clear the interval using the interval ID stored previously
+        clearInterval(intervalId);
+        console.log("Stopped"); // Log a message indicating that the process has stopped
+      });
+
+      // setTimeout(function(){
+      //   console.log('Histesh');  //code work on once time
+      // }, 2000);
+
+      // const sayHitesh = function(){
+      //   console.log('Histesh');
+      // }
+      // const changeText = function(){
+      //   document.querySelector('h1').
+      //   innerHTML= "best js series"
+
+      // }
+
+      // const changeMe = setTimeout(changeText,2000);
+
+      // document.querySelector('#stop').
+      // addEventListener('click', ()=>{
+      //   clearTimeout(changeMe);
+      //   console.log("Stopped");
+
+      // });
+    </script>
+  </body>
+</html>

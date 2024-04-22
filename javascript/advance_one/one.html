@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Currency convertor</title>
+    <link href="style.css" rel="stylesheet" />
+ 
+  </head>
+
+  <body>
+    <div class="container" >
+        0 UNSET Client has been created open() not called yet.
+      <br>  1. Opened open() has been called.
+        <br>2. HEADER_RECEIVED send() has been called, and headers and starts are available.
+        <br>3. Loading Downloading; responseTest holds partial data.
+        <br>4. Done The operstion is complete.
+        <div id="profileImage"></div>
+      
+    </div>
+
+    <script>
+   
+        const requestUrl = 'https://api.github.com/users/rawat201923';      // Define the URL of the GitHub API endpoint to fetch user data
+        
+        const xhr = new XMLHttpRequest();  // Create a new XMLHttpRequest object
+    
+        xhr.open('GET', requestUrl);   // Open a GET request to the specified URL
+        
+        // Define a callback function to handle state changes of the XMLHttpRequest object
+        xhr.onreadystatechange = function(){
+            
+            console.log(xhr.readyState);  // Log the current state of the XMLHttpRequest object
+            
+            // Check if the readyState is 4 (complete) and the status is 200 (OK)
+            if(xhr.readyState === 4 && xhr.status === 200){
+               
+                const data = JSON.parse(this.responseText);  // Parse the response text as JSON
+                
+                // Extract the profile image URL from the fetched data
+              
+                
+                // Create an image element dynamically
+                const imgElement = document.createElement('img');
+                
+                // Set the src attribute of the image element to the profile image URL
+                imgElement.src = data.avatar_url;
+                
+                // Append the image element to the div with id 'profileImage'
+                document.getElementById('profileImage').appendChild(imgElement);
+            }
+        };
+    
+        // Log the readyState of the XMLHttpRequest object
+        console.log(xhr.readyState);
+        
+        // Send the XMLHttpRequest to fetch the data from the specified URL
+        xhr.send();
+    </script>
+    
+  </body>
+</html>
